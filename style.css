@@ -1,0 +1,17 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.banner {
+  height: 400px;
+  background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
+}
+
+.card {
+  margin-bottom: 20px;
+}

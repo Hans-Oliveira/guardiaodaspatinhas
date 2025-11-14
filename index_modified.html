@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<title>Dogwalker &amp; Hospedagem</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #a67c52 50%, #b3e0f2 50%);
+            color: #333;
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+        }
+        .cta-button {
+            background-color: #4a3c2a;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 40px;
+        }
+        .hero-text {
+            max-width: 500px;
+        }
+        .hero-text h1 {
+            font-size: 2.8em;
+            color: #4a3c2a;
+        }
+        .hero-text h1 span {
+            color: #0077a8;
+        }
+        .hero-text p {
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+        .hero-buttons button {
+            margin-right: 15px;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #0077a8;
+            color: #fff;
+        }
+        .btn-secondary {
+            background-color: #fff;
+            color: #0077a8;
+            border: 2px solid #0077a8;
+        }
+        .hero-image img {
+            max-width: 350px;
+            margin-bottom: -65px;
+        }
+        .section {
+            padding: 60px 40px;
+            background-color: #fff;
+        }
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #4a3c2a;
+        }
+        .section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .section1 {
+            background-color: #4A5A23;
+        }
+        .section2 {
+            background-color: #F4E1C8;
+        }
+        .img {
+            margin-left: 85%;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4a3c2a;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-image {
+                margin-top: 30px;
+            }
+        }
+    </style>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body {
+  background: linear-gradient(120deg, #F4E1C8, #ffffff);
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+</style></head>
+<body>
+<header>
+<div class="logo">🐾 PetCare</div>
+<button class="cta-button">Solicitar Orçamento</button>
+</header>
+<section class="hero">
+<div class="hero-text">
+<h1>Seu pet com <span>ACONCHEGO</span> e cuidado</h1>
+<p>Cuido do seu melhor amigo com carinho e responsabilidade!</p>
+<div class="hero-buttons">
+<button class="btn-primary">Conheça</button>
+<button class="btn-secondary">Serviços</button>
+</div>
+</div>
+<div class="hero-image">
+<img alt="Cachorro feliz" src="Designer.png"/>
+</div>
+</section>
+<section class="section1 section">
+<h2>Hospedagem</h2>
+<p>Hospedagem domiciliar com muito amor, atenção e brincadeiras enquanto você viaja.</p>
+<div class="hero-image img">
+<img alt="Cachorro feliz" src="Designer (1).png"/>
+</div>
+</section>
+<section class="section2 section">
+<h2>Passeio de Cachorro</h2>
+<p>Levo seu cão para passeios seguros e divertidos, garantindo exercício e bem-estar.</p>
+<div class="hero-image img">
+<img alt="Cachorro feliz" src="WhatsApp Image 2025-10-24 at 14.42.42.jpeg"/>
+</div>
+</section>
+<footer>
+        © 2024 PetCare. Todos os direitos reservados.
+    </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  });
+  sections.forEach(section => observer.observe(section));
+});
+</script></body>
+</html>

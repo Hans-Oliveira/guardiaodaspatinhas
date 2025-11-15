@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dogwalker & Hospedagem | Guardião das Patinhas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hospedagem domiciliar e passeios para cães com carinho e segurança. Solicite um orçamento." />
+
+  <style>
+    /* ===== Reset básico ===== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #2b2b2b;
+      background: linear-gradient(135deg, #a67c52 50%, #b3e0f2 50%);
+      min-height: 100dvh;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* ===== Layout utilitário ===== */
+    .container {
+      width: min(1120px, 92%);
+      margin-inline: auto;
+    }
+    .stack { display: grid; gap: 1rem; }
+    .section { padding-block: clamp(2rem, 5vw, 4rem); background: #fff; }
+
+    /* ===== Cabeçalho ===== */
+    header {
+      position: relative;
+      z-index: 10;
+      padding-block: 1rem;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo {
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      color: #fff;
+      text-wrap: balance;
+    }
+    .cta-button {
+      background-color: #4a3c2a;
+      color: #fff;
+      padding: .75rem 1rem;
+      border: 0;
+      border-radius: .6rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform .08s ease, opacity .2s ease;
+    }
+    .cta-button:hover { opacity: .92; }
+    .cta-button:active { transform: translateY(1px); }
+
+    /* ===== Hero ===== */
+    .hero {
+      padding-block: clamp(2rem, 6vw, 5rem);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: clamp(1.25rem, 3vw, 2.5rem);
+    }
+    .hero-text {
+      max-width: 56ch;
+    }
+    .hero-text h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      color: #4a3c2a;
+      margin: 0 0 .6rem;
+      text-wrap: balance;
+    }
+    .hero-text h1 span { color: #0077a8; }
+    .hero-text p {
+      margin: 0 0 1rem;
+      font-size: clamp(1rem, 2.1vw, 1.2rem);
+      color: #2f2f2f;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: .5rem;
+    }
+    .btn {
+      padding: .8rem 1.1rem;
+      border-radius: .6rem;
+      border: 2px solid transparent;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .08s ease, opacity .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary { background: #0077a8; color: #fff; }
+    .btn-primary:hover { opacity: .94; }
+    .btn-secondary { background: #fff; color: #0077a8; border-color: #0077a8; }
+    .btn-secondary:hover { background: #eef8fc; }
+
+    .hero-image {
+      /* Removemos margem negativa para não quebrar no mobile */
+      justify-self: center;
+    }
+    .hero-image img {
+      width: min(420px, 100%);
+      border-radius: .8rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    }
+
+    /* ===== Seções ===== */
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin: 0 0 .75rem;
+      color: #4a3c2a;
+    }
+    .section p {
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      line-height: 1.6;
+      margin: 0;
+      color: #2f2f2f;
+    }
+
+    .section1 { background: #4A5A23; color: #fff; }
+    .section1 .section-title { color: #fff; }
+    .section1 .media {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+    .section1 .media .frame img { border-radius: .8rem; }
+
+    .section2 { background: #F4E1C8; }
+    .section2 .media {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+    .section2 .frame img { border-radius: .8rem; }
+
+    /* ===== Rodapé ===== */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #4a3c2a;
+      color: #fff;
+      font-size: .95rem;
+    }
+
+    /* ===== Responsividade ===== */
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-buttons { justify-content: center; }
+      .hero-image { order: 2; }
+    }
+
+    @media (max-width: 768px) {
+      .section1 .media,
+      .section2 .media { grid-template-columns: 1fr; }
+      .section1 .frame,
+      .section2 .frame { justify-self: center; }
+    }
+
+    @media (max-width: 480px) {
+      .btn, .cta-button { width: 100%; }
+      .header-inner { flex-wrap: wrap; }
+      .logo { width: 100%; }
+    }
+
+    /* Acessibilidade de foco */
+    :focus-visible {
+      outline: 3px solid #0077a8;
+      outline-offset: 2px;
+      border-radius: .4rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="logo" aria-label="Guardião das Patinhas">🐾 Guardião das Patinhas</div>
+      <button class="cta-button" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">
+        Solicitar Orçamento
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Seu pet com <span>ACONCHEGO</span> e cuidado</h1>
+          <p>Cuido do seu melhor amigo com carinho e responsabilidade!</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#servicos">Conheça</a>
+            <a class="btn btn-secondary" href="#servicos">Serviços</a>
+          </div>
+        </div>
+
+        <div class="hero-image" aria-hidden="true">
+          <!-- Ajuste o caminho dos arquivos conforme os nomes no repositório -->
+          <img src="Designer.png" alt="Cachorro feliz em ilustração" />
+        </div>
+      </div>
+    </section>
+
+    <!-- HOSPEDAGEM -->
+    <section class="section section1" id="hospedagem">
+      <div class="container">
+        <h2 class="section-title">Hospedagem</h2>
+        <p>Hospedagem domiciliar com muito amor, atenção e brincadeiras enquanto você viaja.</p>
+
+        <div class="media">
+          <div class="copy">
+            <p class="stack">
+              <span>Ambiente familiar e seguro.</span>
+              <span>Rotina com passeios, brincadeiras e alimentação.</span>
+              <span>Envio de fotos e vídeos diários para você acompanhar.</span>
+            </p>
+          </div>
+          <div class="frame">
+            <img src="Designer (1).png" alt="Cão descansando confortável" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PASSEIO -->
+    <section class="section section2" id="servicos">
+      <div class="container">
+        <h2 class="section-title">Passeio de Cachorro</h2>
+        <p>Levo seu cão para passeios seguros e divertidos, garantindo exercício e bem-estar.</p>
+
+        <div class="media">
+          <div class="copy">
+            <p class="stack">
+              <span>Passeios individuais ou em pequenos grupos.</span>
+              <span>Relatórios de rota/tempo e hidratação.</span>
+              <span>Uso de guia segura e identificação.</span>
+            </p>
+          </div>
+          <div class="frame">
+            <img src="WhatsApp Image 2025-10-24 at 14.42.42.jpeg" alt="Pessoa passeando com um cachorro feliz" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato">
+    &copy; 2024 Guardião das Patinhas — Todos os direitos reservados.
+  </footer>
+</body>
+</html>

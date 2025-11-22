@@ -14,7 +14,7 @@
       margin: 0;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: #2b2b2b;
-      background: linear-gradient(135deg, #a67c52 50%, #b3e0f2 50%);
+      background: #f1dd90;
       min-height: 100dvh;
     }
     img { display: block; max-width: 100%; height: auto; }
@@ -25,7 +25,7 @@
       margin-inline: auto;
     }
     .stack { display: grid; gap: 1rem; }
-    .section { padding-block: clamp(2rem, 5vw, 4rem); background: #fff; }
+    
 
     /* ===== Cabeçalho ===== */
     header {
@@ -44,6 +44,7 @@
       font-weight: 800;
       color: #fff;
       text-wrap: balance;
+      display: flex;
     }
     .cta-button {
       background-color: #4a3c2a;
@@ -127,7 +128,7 @@
       color: #2f2f2f;
     }
 
-    .section1 { background: #4A5A23; color: #fff; }
+    .section1 { color: #fff; }
     .section1 .section-title { color: #fff; }
     .section1 .media {
       display: grid;
@@ -138,7 +139,6 @@
     }
     .section1 .media .frame img { border-radius: .8rem; }
 
-    .section2 { background: #F4E1C8; }
     .section2 .media {
       display: grid;
       grid-template-columns: 1fr 420px;
@@ -152,7 +152,7 @@
     footer {
       text-align: center;
       padding: 1rem;
-      background: #4a3c2a;
+      background: linear-gradient(90deg, #3c9fa3, #72cfd2);
       color: #fff;
       font-size: .95rem;
     }
@@ -183,12 +183,19 @@
       outline-offset: 2px;
       border-radius: .4rem;
     }
+
+    #img-passeio, #img-hospedagem, #img-petsitter, #img-creche {
+      margin: 40px auto;
+      height: 100px;
+      width: 250px;
+    }
+
   </style>
 </head>
 <body>
   <header>
     <div class="container header-inner">
-      <div class="logo" aria-label="Guardião das Patinhas">🐾 Guardião das Patinhas</div>
+      <div class="logo" aria-label="Guardião das Patinhas">Guardião das Patinhas <img src="patinhas.png" alt=""> </div>
       <button class="cta-button" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">
         Solicitar Orçamento
       </button>
@@ -215,10 +222,31 @@
       </div>
     </section>
 
-    <!-- HOSPEDAGEM -->
-    <section class="section section1" id="hospedagem">
+    <!-- PASSEIO -->
+    <section class="section section3" id="servicos">
       <div class="container">
-        <h2 class="section-title">Hospedagem</h2>
+        <img src="WhatsApp Image 2025-11-22 at 16.36.16.jpeg" id="img-passeio">
+        <p>Levo seu cão para passeios seguros e divertidos, garantindo exercício e bem-estar.</p>
+
+        <div class="media">
+          <div class="copy">
+            <p class="stack">
+              <span>Passeios individuais ou em pequenos grupos.</span>
+              <span>Relatórios de rota/tempo e hidratação.</span>
+              <span>Uso de guia segura e identificação.</span>
+            </p>
+          </div>
+          <div class="frame">
+            <img src="WhatsApp Image 2025-11-22 at 16.40.40.jpeg" alt="Pessoa passeando com um cachorro feliz"  id="img2"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- HOSPEDAGEM -->
+    <section class="section section2" id="hospedagem">
+      <div class="container">
+        <img src="WhatsApp Image 2025-11-22 at 16.26.39.jpeg" id="img-hospedagem">
         <p>Hospedagem domiciliar com muito amor, atenção e brincadeiras enquanto você viaja.</p>
 
         <div class="media">
@@ -236,22 +264,43 @@
       </div>
     </section>
 
-    <!-- PASSEIO -->
-    <section class="section section2" id="servicos">
+    <!-- CRECHE -->
+    <section class="section section1" id="creche">
       <div class="container">
-        <h2 class="section-title">Passeio de Cachorro</h2>
-        <p>Levo seu cão para passeios seguros e divertidos, garantindo exercício e bem-estar.</p>
+        <img src="WhatsApp Image 2025-11-22 at 16.37.30.jpeg" id="img-creche">
+        <p>Hospedagem domiciliar com muito amor, atenção e brincadeiras enquanto você viaja.</p>
 
         <div class="media">
           <div class="copy">
             <p class="stack">
-              <span>Passeios individuais ou em pequenos grupos.</span>
-              <span>Relatórios de rota/tempo e hidratação.</span>
-              <span>Uso de guia segura e identificação.</span>
+              <span>Ambiente familiar e seguro.</span>
+              <span>Rotina com passeios, brincadeiras e alimentação.</span>
+              <span>Envio de fotos e vídeos diários para você acompanhar.</span>
             </p>
           </div>
           <div class="frame">
-            <img src="WhatsApp Image 2025-10-24 at 14.42.42.jpeg" alt="Pessoa passeando com um cachorro feliz" />
+            <img src="Designer (1).png" alt="Cão descansando confortável" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PET SISTTER -->
+    <section class="section section1" id="petsitter">
+      <div class="container">
+        <img src="WhatsApp Image 2025-11-22 at 16.36.59.jpeg" id="img-petsitter">
+        <p>Hospedagem domiciliar com muito amor, atenção e brincadeiras enquanto você viaja.</p>
+
+        <div class="media">
+          <div class="copy">
+            <p class="stack">
+              <span>Ambiente familiar e seguro.</span>
+              <span>Rotina com passeios, brincadeiras e alimentação.</span>
+              <span>Envio de fotos e vídeos diários para você acompanhar.</span>
+            </p>
+          </div>
+          <div class="frame">
+            <img src="Designer (1).png" alt="Cão descansando confortável" />
           </div>
         </div>
       </div>

@@ -1,314 +1,475 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <title>Dogwalker & Hospedagem | Guardião das Patinhas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Hospedagem domiciliar e passeios para cães com carinho e segurança. Solicite um orçamento." />
+  <meta name="description"
+    content="Hospedagem domiciliar e passeios para cães com carinho e segurança. Solicite um orçamento." />
 
   <style>
     /* ===== Reset básico ===== */
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color: #2b2b2b;
-      background: #f1dd90;
-      min-height: 100dvh;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
     }
-    img { display: block; max-width: 100%; height: auto; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0 !important;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+      color: #2b2b2b !important;
+      background: #f1dd90 !important;
+      min-height: 100dvh !important;
+    }
+
+    img {
+      display: block !important;
+      max-width: 100% !important;
+      height: auto !important;
+    }
 
     /* ===== Layout utilitário ===== */
     .container {
-      width: min(1120px, 92%);
-      margin-inline: auto;
+      width: min(1120px, 92%) !important;
+      margin-inline: auto !important;
     }
-    .stack { display: grid; gap: 1rem; }
-    
+
+    .stack {
+      display: grid !important;
+      gap: 1rem !important;
+    }
+
 
     /* ===== Cabeçalho ===== */
     header {
-      position: relative;
-      z-index: 10;
-      padding-block: 1rem;
+      position: relative !important;
+      z-index: 10 !important;
     }
+
     .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 1rem !important;
     }
+
     .logo {
-      font-size: clamp(1.25rem, 2.5vw, 1.8rem);
-      font-weight: 800;
-      color: #fff;
-      text-wrap: balance;
-      display: flex;
+      font-size: clamp(1.25rem, 2.5vw, 1.8rem) !important;
+      font-weight: 800 !important;
+      color: #fff !important;
+      text-wrap: balance !important;
+      display: flex !important;
     }
+
     .cta-button {
-      background-color: #4a3c2a;
-      color: #fff;
-      padding: .75rem 1rem;
-      border: 0;
-      border-radius: .6rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: transform .08s ease, opacity .2s ease;
+      background-color: #4a3c2a !important;
+      color: #fff !important;
+      padding: .75rem 1rem !important;
+      border: 0 !important;
+      border-radius: .6rem !important;
+      font-size: 1rem !important;
+      cursor: pointer !important;
+      transition: transform .08s ease, opacity .2s ease !important;
     }
-    .cta-button:hover { opacity: .92; }
-    .cta-button:active { transform: translateY(1px); }
+
+    .cta-button:hover {
+      opacity: .92 !important;
+    }
+
+    .cta-button:active {
+      transform: translateY(1px) !important;
+    }
 
     /* ===== Hero ===== */
-    .hero {
-      padding-block: clamp(2rem, 6vw, 5rem);
-    }
+
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      align-items: center;
-      gap: clamp(1.25rem, 3vw, 2.5rem);
+      display: grid !important;
+      grid-template-columns: 1.15fr .85fr !important;
+      align-items: center !important;
+      gap: clamp(1.25rem, 3vw, 2.5rem) !important;
     }
+
     .hero-text {
-      max-width: 56ch;
+      max-width: 56ch !important;
     }
+
     .hero-text h1 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      line-height: 1.15;
-      color: #4a3c2a;
-      margin: 0 0 .6rem;
-      text-wrap: balance;
+      font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+      line-height: 1.15 !important;
+      color: #4a3c2a !important;
+      margin: 0 0 .6rem !important;
+      text-wrap: balance !important;
     }
-    .hero-text h1 span { color: #0077a8; }
+
+    .hero-text h1 span {
+      color: #0077a8 !important;
+    }
+
     .hero-text p {
-      margin: 0 0 1rem;
-      font-size: clamp(1rem, 2.1vw, 1.2rem);
-      color: #2f2f2f;
+      margin: 0 0 1rem !important;
+      font-size: clamp(1rem, 2.1vw, 1.2rem) !important;
+      color: #2f2f2f !important;
     }
+
     .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .8rem;
-      margin-top: .5rem;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: .8rem !important;
+      margin-top: .5rem !important;
     }
+
     .btn {
-      padding: .8rem 1.1rem;
-      border-radius: .6rem;
-      border: 2px solid transparent;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform .08s ease, opacity .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+      padding: .8rem 1.1rem !important;
+      border-radius: .6rem !important;
+      border: 2px solid transparent !important;
+      font-weight: 600 !important;
+      cursor: pointer !important;
+      transition: transform .08s ease, opacity .2s ease, background .2s ease, color .2s ease, border-color .2s ease !important;
     }
-    .btn:active { transform: translateY(1px); }
-    .btn-primary { background: #0077a8; color: #fff; }
-    .btn-primary:hover { opacity: .94; }
-    .btn-secondary { background: #fff; color: #0077a8; border-color: #0077a8; }
-    .btn-secondary:hover { background: #eef8fc; }
+
+    .btn:active {
+      transform: translateY(1px) !important;
+    }
+
+    .btn-primary {
+      background: #0077a8 !important;
+      color: #fff !important;
+    }
+
+    .btn-primary:hover {
+      opacity: .94 !important;
+    }
+
+    .btn-secondary {
+      background: #fff !important;
+      color: #0077a8 !important;
+      border-color: #0077a8 !important;
+    }
+
+    .btn-secondary:hover {
+      background: #eef8fc !important;
+    }
 
     .hero-image {
       /* Removemos margem negativa para não quebrar no mobile */
-      justify-self: center;
+      justify-self: center !important;
     }
+
     .hero-image img {
-      width: min(420px, 100%);
-      border-radius: .8rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,.12);
+      width: min(420px, 100%) !important;
+      border-radius: .8rem !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .12) !important;
     }
 
     /* ===== Seções ===== */
     .section-title {
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      margin: 0 0 .75rem;
-      color: #4a3c2a;
-    }
-    .section p {
-      font-size: clamp(1rem, 2vw, 1.1rem);
-      line-height: 1.6;
-      margin: 0;
-      color: #2f2f2f;
+      font-size: clamp(1.5rem, 3vw, 2rem) !important;
+      margin: 0 0 .75rem !important;
+      color: #4a3c2a !important;
     }
 
-    .section1 { color: #fff; }
-    .section1 .section-title { color: #fff; }
-    .section1 .media {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      align-items: center;
-      gap: 1.25rem;
-      margin-top: 1.25rem;
+    .section p {
+      font-size: clamp(1rem, 2vw, 1.1rem) !important;
+      line-height: 1.6 !important;
+      margin: 0 !important;
+      color: #2f2f2f !important;
     }
-    .section1 .media .frame img { border-radius: .8rem; }
+
+    .section1 {
+      color: #fff !important;
+    }
+
+    .section1 .section-title {
+      color: #fff !important;
+    }
+
+    .section1 .media {
+      display: grid !important;
+      grid-template-columns: 1fr 420px !important;
+      align-items: center !important;
+      gap: 1.25rem !important;
+      margin-top: 1.25rem !important;
+    }
+
+    .section1 .media .frame img {
+      border-radius: .8rem !important;
+    }
 
     .section2 .media {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      align-items: center;
-      gap: 1.25rem;
-      margin-top: 1.25rem;
+      display: grid !important;
+      grid-template-columns: 1fr 420px !important;
+      align-items: center !important;
+      gap: 1.25rem !important;
+      margin-top: 1.25rem !important;
     }
-    .section2 .frame img { border-radius: .8rem; }
+
+    .section2 .frame img {
+      border-radius: .8rem !important;
+    }
 
     /* ===== Rodapé ===== */
     footer {
-      text-align: center;
-      padding: 1rem;
-      background: linear-gradient(90deg, #3c9fa3, #72cfd2);
-      color: #fff;
-      font-size: .95rem;
+      text-align: center !important;
+      padding: 1rem !important;
+      background: linear-gradient(90deg, #3c9fa3, #72cfd2) !important;
+      color: #fff !important;
+      font-size: .95rem !important;
     }
 
     /* ===== Responsividade ===== */
     @media (max-width: 992px) {
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero-buttons { justify-content: center; }
-      .hero-image { order: 2; }
+      .hero-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+      }
+
+      .hero-buttons {
+        justify-content: center !important;
+      }
+
+      .hero-image {
+        order: 2 !important;
+      }
     }
 
     @media (max-width: 768px) {
+
       .section1 .media,
-      .section2 .media { grid-template-columns: 1fr; }
+      .section2 .media {
+        grid-template-columns: 1fr !important;
+      }
+
       .section1 .frame,
-      .section2 .frame { justify-self: center; }
+      .section2 .frame {
+        justify-self: center !important;
+      }
     }
 
     @media (max-width: 480px) {
-      .btn, .cta-button { width: 100%; }
-      .header-inner { flex-wrap: wrap; }
-      .logo { width: 100%; }
+
+      .btn,
+      .cta-button {
+        width: 100% !important;
+      }
+
+      .header-inner {
+        flex-wrap: wrap !important;
+      }
+
+      .logo {
+        width: 100% !important;
+      }
     }
 
     /* Acessibilidade de foco */
     :focus-visible {
-      outline: 3px solid #0077a8;
-      outline-offset: 2px;
-      border-radius: .4rem;
+      outline: 3px solid #0077a8 !important;
+      outline-offset: 2px !important;
+      border-radius: .4rem !important;
     }
 
-    #img-passeio, #img-hospedagem, #img-petsitter, #img-creche {
-      margin: 40px auto;
-      height: 100px;
-      width: 250px;
+    #img-passeio,
+    #img-hospedagem,
+    #img-petsitter,
+    #img-creche {
+      margin: 0px auto 30px !important;
+      height: 100px !important;
+      width: 250px !important;
     }
 
+    #avatar {
+      width: 270px !important;
+      height: 270px !important;
+      object-fit: cover !important;
+      border-radius: 50% !important;
+      margin: auto !important;
+    }
+
+    .whatsapp-float {
+      position: fixed !important;
+      width: 60px !important;
+      height: 60px !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      background-color: #25d366 !important;
+      color: #FFF !important;
+      border-radius: 50% !important;
+      text-align: center !important;
+      font-size: 30px !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+      z-index: 100 !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      text-decoration: none !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #20ba5a !important;
+      transform: translateY(-3px) scale(1.05) !important;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .whatsapp-float .img {
+      width: 36px !important;
+      height: 36px !important;
+    }
+
+    .nav-item {
+      background: linear-gradient(90deg, #3c9fa3, #72cfd2);
+      padding: 15px 60px;
+      border-radius: 50px !important;
+      border: #f1dd90 1px solid;
+    }
+
+    .nav-item a {
+      text-decoration: none !important;
+      color: #fff !important;
+    }
+
+    .menu {
+      justify-content: center !important;
+    }
+
+    .img2 {
+      margin: 30px auto !important;
+      height: 280px !important;
+      width: 320px !important;
+    }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
-  <header>
-    <div class="container header-inner">
-      <div class="logo" aria-label="Guardião das Patinhas">Guardião das Patinhas <img src="patinhas.png" alt=""> </div>
-      <button class="cta-button" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">
-        Solicitar Orçamento
-      </button>
-    </div>
-  </header>
 
+<body>
+  <header><img src="WhatsApp Image 2025-12-01 at 21.04.07.jpeg">
+    <div class="container header-inner">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom-navbar">
+          <div class="container menu">
+            <h5>Serviços</h5>
+          </div>
+          <div class="container menu">
+            <!-- Botão hamburger --><button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#menuTopo" aria-controls="menuTopo" aria-expanded="false"
+              aria-label="Alternar navegação"><span class="navbar-toggler-icon"></span></button>
+            <!-- Itens que colapsam -->
+            <div class="collapse navbar-collapse" id="menuTopo">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mt-2">
+                <li class="nav-item"><a href="#servicos">Passeios</a></li>
+                <li class="nav-item"><a href="#hospedagem">Hospedagem</a></li>
+                <li class="nav-item"><a href="#creche">Creche</a></li>
+                <li class="nav-item"><a href="#petsitter">Pet Siter</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <!-- <h1>Seu pet com <span>ACONCHEGO</span>e cuidado</h1>
+            <p>Cuido do seu melhor amigo com carinho e responsabilidade !</p>--><!-- <div class="hero-buttons"><a
+                class="btn btn-primary" href="#servicos">Conheça</a><a class="btn btn-secondary"
+                href="#servicos">Serviços</a>
+        </div>-->
+        </div>
+      </div>
+    </div><img src="WhatsApp Image 2025-11-22 at 16.40.40.jpeg" alt="Pessoa passeando com um cachorro feliz"
+      class="img2" />
+  </header>
   <main>
     <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Seu pet com <span>ACONCHEGO</span> e cuidado</h1>
-          <p>Cuido do seu melhor amigo com carinho e responsabilidade!</p>
-          <div class="hero-buttons">
-            <a class="btn btn-primary" href="#servicos">Conheça</a>
-            <a class="btn btn-secondary" href="#servicos">Serviços</a>
-          </div>
-        </div>
-
         <div class="hero-image" aria-hidden="true">
           <!-- Ajuste o caminho dos arquivos conforme os nomes no repositório -->
-          <img src="Designer.png" alt="Cachorro feliz em ilustração" />
         </div>
       </div>
     </section>
-
     <!-- PASSEIO -->
     <section class="section section3" id="servicos">
-      <div class="container">
-        <img src="WhatsApp Image 2025-11-22 at 16.36.16.jpeg" id="img-passeio">
-        <p>Levo seu cão para passeios seguros e divertidos, garantindo exercício e bem-estar.</p>
-
+      <div class="container"><img src="WhatsApp Image 2025-11-22 at 16.36.16.jpeg" id="img-passeio">
+        <p>Transforme o tédio em aventura. Oferecemos passeios de 1 hora de duração onde seu pet não apenas caminha,
+          mas interage,
+          cheira,
+          brinca e faz parte de uma matilha equilibrada.</p>
         <div class="media">
           <div class="copy">
-            <p class="stack">
-              <span>Passeios individuais ou em pequenos grupos.</span>
-              <span>Relatórios de rota/tempo e hidratação.</span>
-              <span>Uso de guia segura e identificação.</span>
-            </p>
+            <p class="stack"><span>Passeios individuais ou em pequenos grupos.</span><span>Relatórios de rota/tempo
+                e hidratação.</span><span>Uso de guia segura e identificação.</span></p>
           </div>
-          <div class="frame">
-            <img src="WhatsApp Image 2025-11-22 at 16.40.40.jpeg" alt="Pessoa passeando com um cachorro feliz"  id="img2"/>
-          </div>
+          <div class="frame"></div>
         </div>
       </div>
     </section>
-
-        <!-- HOSPEDAGEM -->
+    <!-- HOSPEDAGEM -->
     <section class="section section2" id="hospedagem">
-      <div class="container">
-        <img src="WhatsApp Image 2025-11-22 at 16.26.39.jpeg" id="img-hospedagem">
-        <p>Hospedagem domiciliar com muito amor, atenção e brincadeiras enquanto você viaja.</p>
-
+      <div class="container"><img src="WhatsApp Image 2025-11-22 at 16.40.40.jpeg"
+          alt="Pessoa passeando com um cachorro feliz" class="img2" /><img
+          src="WhatsApp Image 2025-11-22 at 16.26.39.jpeg" id="img-hospedagem">
+        <p>Hospedagem domiciliar com todo o conforto de casa,
+          longe de gaiolas e com muito amor envolvido. Seu bichinho será tratado como parte da família</p>
         <div class="media">
           <div class="copy">
-            <p class="stack">
-              <span>Ambiente familiar e seguro.</span>
-              <span>Rotina com passeios, brincadeiras e alimentação.</span>
-              <span>Envio de fotos e vídeos diários para você acompanhar.</span>
-            </p>
+            <p class="stack"><span>Ambiente familiar e seguro.</span><span>Rotina com passeios,
+                brincadeiras e alimentação.</span><span>Envio de fotos e vídeos diários para você
+                acompanhar.</span></p>
           </div>
-          <div class="frame">
-            <img src="Designer (1).png" alt="Cão descansando confortável" />
-          </div>
+          <div class="frame"></div>
         </div>
       </div>
     </section>
-
     <!-- CRECHE -->
     <section class="section section1" id="creche">
-      <div class="container">
-        <img src="WhatsApp Image 2025-11-22 at 16.37.30.jpeg" id="img-creche">
-        <p>Hospedagem domiciliar com muito amor, atenção e brincadeiras enquanto você viaja.</p>
-
+      <div class="container"><img src="WhatsApp Image 2025-11-22 at 16.40.40.jpeg"
+          alt="Pessoa passeando com um cachorro feliz" class="img2" /><img
+          src="WhatsApp Image 2025-11-22 at 16.37.30.jpeg" id="img-creche">
+        <p>Hospedagem domiciliar com muito amor,
+          atenção e brincadeiras enquanto você viaja.</p>
         <div class="media">
           <div class="copy">
-            <p class="stack">
-              <span>Ambiente familiar e seguro.</span>
-              <span>Rotina com passeios, brincadeiras e alimentação.</span>
-              <span>Envio de fotos e vídeos diários para você acompanhar.</span>
-            </p>
+            <p class="stack"><span>Ambiente familiar e seguro.</span><span>Rotina com passeios,
+                brincadeiras e alimentação.</span><span>Envio de fotos e vídeos diários para você
+                acompanhar.</span></p>
           </div>
-          <div class="frame">
-            <img src="Designer (1).png" alt="Cão descansando confortável" />
-          </div>
+          <div class="frame"></div>
         </div>
       </div>
     </section>
-
     <!-- PET SISTTER -->
     <section class="section section1" id="petsitter">
-      <div class="container">
-        <img src="WhatsApp Image 2025-11-22 at 16.36.59.jpeg" id="img-petsitter">
-        <p>Hospedagem domiciliar com muito amor, atenção e brincadeiras enquanto você viaja.</p>
-
+      <div class="container"><img src="WhatsApp Image 2025-11-22 at 16.40.40.jpeg"
+          alt="Pessoa passeando com um cachorro feliz" class="img2" /><img
+          src="WhatsApp Image 2025-11-22 at 16.36.59.jpeg" id="img-petsitter">
+        <p>Hospedagem domiciliar com muito amor,
+          atenção e brincadeiras enquanto você viaja.</p>
         <div class="media">
           <div class="copy">
-            <p class="stack">
-              <span>Ambiente familiar e seguro.</span>
-              <span>Rotina com passeios, brincadeiras e alimentação.</span>
-              <span>Envio de fotos e vídeos diários para você acompanhar.</span>
-            </p>
+            <p class="stack"><span>Ambiente familiar e seguro.</span><span>Rotina com passeios,
+                brincadeiras e alimentação.</span><span>Envio de fotos e vídeos diários para você
+                acompanhar.</span></p>
           </div>
-          <div class="frame">
-            <img src="Designer (1).png" alt="Cão descansando confortável" />
-          </div>
+          <div class="frame"></div>
         </div>
       </div>
     </section>
-  </main>
-
-  <footer id="contato">
-    &copy; 2024 Guardião das Patinhas — Todos os direitos reservados.
-  </footer>
+  </main><a class="whatsapp-float"
+    href="https://wa.me/5511970753009?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho"
+    target="_blank"><svg fill="#FFFFFF" width="30px" height="30px" viewBox="0 0 33 33" version="1.1"
+      xmlns="http://www.w3.org/2000/svg" class="img">
+      <path
+        d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z">
+      </path>
+    </svg></a><img src="WhatsApp Image 2025-11-24 at 22.40.19.jpeg" alt="">
+  <footer id="contato">&copy;
+    2024 Guardião das Patinhas — Todos os direitos reservados. </footer>
 </body>
+
 </html>

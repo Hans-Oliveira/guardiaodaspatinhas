@@ -1,17 +1,465 @@
+/* ===== Reset básico ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  margin: 0 !important;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  color: #2b2b2b !important;
+  background: #f1dd90 !important;
+  min-height: 100dvh !important;
+}
+
+img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* ===== Layout utilitário ===== */
+.container {
+  width: min(1120px, 92%) !important;
+  margin-inline: auto !important;
+}
+
+.stack {
+  display: grid !important;
+  gap: 1rem !important;
+}
+
+
+/* ===== Cabeçalho ===== */
+header {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.header-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem) !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+  text-wrap: balance !important;
+  display: flex !important;
 }
 
-.banner {
-  height: 400px;
-  background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
+.cta-button {
+  background-color: #4a3c2a !important;
+  color: #fff !important;
+  padding: .75rem 1rem !important;
+  border: 0 !important;
+  border-radius: .6rem !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  transition: transform .08s ease, opacity .2s ease !important;
 }
 
-.card {
-  margin-bottom: 20px;
+.cta-button:hover {
+  opacity: .92 !important;
+}
+
+.cta-button:active {
+  transform: translateY(1px) !important;
+}
+
+/* ===== Hero ===== */
+
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.15fr .85fr !important;
+  align-items: center !important;
+  gap: clamp(1.25rem, 3vw, 2.5rem) !important;
+}
+
+.hero-text {
+  max-width: 56ch !important;
+}
+
+.hero-text h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem) !important;
+  line-height: 1.15 !important;
+  color: #4a3c2a !important;
+  margin: 0 0 .6rem !important;
+  text-wrap: balance !important;
+}
+
+.hero-text h1 span {
+  color: #0077a8 !important;
+}
+
+.hero-text p {
+  margin: 0 0 1rem !important;
+  font-size: clamp(1rem, 2.1vw, 1.2rem) !important;
+  color: #2f2f2f !important;
+}
+
+.hero-buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: .8rem !important;
+  margin-top: .5rem !important;
+}
+
+.btn {
+  padding: .8rem 1.1rem !important;
+  border-radius: .6rem !important;
+  border: 2px solid transparent !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: transform .08s ease, opacity .2s ease, background .2s ease, color .2s ease, border-color .2s ease !important;
+}
+
+.btn:active {
+  transform: translateY(1px) !important;
+}
+
+.btn-primary {
+  background: #0077a8 !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  opacity: .94 !important;
+}
+
+.btn-secondary {
+  background: #fff !important;
+  color: #0077a8 !important;
+  border-color: #0077a8 !important;
+}
+
+.btn-secondary:hover {
+  background: #eef8fc !important;
+}
+
+.hero-image {
+  /* Removemos margem negativa para não quebrar no mobile */
+  justify-self: center !important;
+}
+
+.hero-image img {
+  width: min(420px, 100%) !important;
+  border-radius: .8rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .12) !important;
+}
+
+/* ===== Seções ===== */
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem) !important;
+  margin: 0 0 .75rem !important;
+  color: #4a3c2a !important;
+}
+
+.section p {
+  font-size: clamp(1rem, 2vw, 1.1rem) !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  color: #2f2f2f !important;
+}
+
+.section1 {
+  color: #fff !important;
+}
+
+.section1 .section-title {
+  color: #fff !important;
+}
+
+.section1 .media {
+  display: grid !important;
+  grid-template-columns: 1fr 420px !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+  margin-top: 1.25rem !important;
+}
+
+.section1 .media .frame img {
+  border-radius: .8rem !important;
+}
+
+.section2 .media {
+  display: grid !important;
+  grid-template-columns: 1fr 420px !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+  margin-top: 1.25rem !important;
+}
+
+.section2 .frame img {
+  border-radius: .8rem !important;
+}
+
+/* ===== Rodapé ===== */
+footer {
+  text-align: center !important;
+  padding: 1rem !important;
+  background: linear-gradient(90deg, #3c9fa3, #72cfd2) !important;
+  color: #fff !important;
+  font-size: .95rem !important;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  .hero-buttons {
+    justify-content: center !important;
+  }
+
+  .hero-image {
+    order: 2 !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .section1 .media,
+  .section2 .media {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  .section1 .frame,
+  .section2 .frame {
+    justify-self: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .btn,
+  .cta-button {
+    width: 100% !important;
+  }
+
+  .header-inner {
+    flex-wrap: wrap !important;
+  }
+
+  .logo {
+    width: 100% !important;
+  }
+}
+
+/* Acessibilidade de foco */
+:focus-visible {
+  outline: 3px solid #0077a8 !important;
+  outline-offset: 2px !important;
+  border-radius: .4rem !important;
+}
+
+#img-passeio,
+#img-hospedagem,
+#img-petsitter,
+#img-creche {
+  margin: 0px auto 30px !important;
+  height: 100px !important;
+  width: 250px !important;
+}
+
+#avatar {
+  width: 270px !important;
+  height: 270px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  margin: auto !important;
+}
+
+.whatsapp-float {
+  position: fixed !important;
+  width: 60px !important;
+  height: 60px !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  background-color: #25d366 !important;
+  color: #FFF !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  font-size: 30px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  z-index: 100 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.whatsapp-float:hover {
+  background-color: #20ba5a !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.whatsapp-float .img {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+.nav-item {
+  background: linear-gradient(90deg, #3c9fa3, #72cfd2);
+  padding: 15px 60px;
+  border-radius: 50px !important;
+  border: #f1dd90 1px solid;
+}
+
+.nav-item a {
+  text-decoration: none !important;
+  color: #fff !important;
+}
+
+.menu {
+  justify-content: center !important;
+}
+
+.img2 {
+  margin: 30px auto !important;
+  height: 280px !important;
+  width: 320px !important;
+}
+
+/* Carousel Styles */
+.carousel-container {
+  position: relative !important;
+  overflow: hidden !important;
+  margin: 30px auto !important;
+  height: 280px !important;
+  width: 320px !important;
+  border-radius: .8rem !important;
+}
+
+.carousel-wrapper {
+  display: flex !important;
+  width: 100% !important;
+  height: 100% !important;
+  transition: transform 0.5s ease-in-out !important;
+}
+
+.carousel-slide {
+  min-width: 100% !important;
+  height: 100% !important;
+}
+
+.carousel-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: .8rem !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
+
+
+.carousel-dots {
+  position: absolute !important;
+  bottom: 10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  gap: 8px !important;
+  z-index: 10 !important;
+}
+
+.carousel-dot {
+  width: 10px !important;
+  height: 10px !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  transition: background 0.3s !important;
+}
+
+.carousel-dot.active {
+  background: white !important;
+  transform: scale(1.2) !important;
+}
+
+/* Entrance Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animate Header Image (Logo/Banner) */
+header>img {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+/* Animate Navigation */
+.navbar {
+  opacity: 0;
+  animation: fadeInDown 0.8s ease-out 0.3s forwards;
+}
+
+/* Animate Carousel */
+.carousel-container {
+  opacity: 0;
+  animation: zoomIn 1s ease-out 0.5s forwards;
+}
+
+/* Animate any visible Hero Text (if uncommented in future) */
+.hero-text h1,
+.hero-text p {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.8s forwards;
+}
+
+/* Animate Main Content Images */
+main section img {
+  opacity: 0;
+  animation: zoomIn 1s ease-out 0.6s forwards;
+}
+
+/* Animate Main Content Paragraphs */
+main section p {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.8s forwards;
 }
